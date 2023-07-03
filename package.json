@@ -1,0 +1,12 @@
+{
+  "name": "learn-node",
+  "version": "1.0.0",
+  "description": "Node.js learning guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Mohamed Idris M",
+  "license": "ISC"
+}
