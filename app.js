@@ -1,21 +1,18 @@
-const http = require('http');
-
 const express = require('express');
-
-//const routes = require('./routes');//
 
 const app = express();
 
-app.use((req, res, next) => {
-    console.log('In the middleware');
-    next(); //Allows the request to continue to the next middleware in line
-});
+const adminRoutes = require('./routes/admin')
+const shopRoutes = require('./routes/shop')
 
-app.use((req, res, next) => {
-    console.log('In another middleware')
-});
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
 
+app.use('/admin',adminRoutes)
+app.use(shopRoutes)
 
-const server = http.createServer(app);
+app.use((req, res, next)=> {
+    res.status(404).send('<h1>Page not found</h1>')
+})
 
-server.listen(3000);
+app.listen(3000);
