@@ -11,9 +11,12 @@ app.set('views', 'views');
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+const aboutRoutes = require('./routes/about');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(aboutRoutes);
 
 app.use('/admin', adminData.routes);
 app.use(shopRoutes);
