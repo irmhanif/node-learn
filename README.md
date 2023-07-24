@@ -1,1 +1,1 @@
-# learning node, each branch having some different sections like basics, express, db connection
+# learning node, each branch having some different sections like basics, express, db connection sql
